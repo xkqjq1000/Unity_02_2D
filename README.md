@@ -1,2 +1,2 @@
-# Unity_02_2D
+# Unity_02_Tapgame
 도트게임
