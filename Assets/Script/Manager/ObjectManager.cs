@@ -1,9 +1,6 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Object = UnityEngine.Object;
-
 public class ObjectManager : MonoBehaviour
 {
     #region Singletone
@@ -29,5 +26,21 @@ public class ObjectManager : MonoBehaviour
         GameObject Character = (GameObject)Instantiate(CharacterObj);
 
         return Character;
+    }
+
+    public GameObject CreateMonster()
+    {
+        Object monsterObj = Resources.Load("Sprite/Monster1");
+        GameObject monster = (GameObject)Instantiate(monsterObj);
+
+        return monster;
+    }
+
+    public ParticleSystem CreateHitEffect()
+    {
+        Object effectObj = Resources.Load("Sprite/Hit_Green");
+        GameObject effect = (GameObject)Instantiate(effectObj);
+
+        return effect.GetComponent<ParticleSystem>();
     }
 }

@@ -33,7 +33,8 @@ public class UiManager : MonoBehaviour
         {
             GameObject go = new GameObject("@EventSystem");
             go.AddComponent<EventSystem>();
-            go.AddComponent<EventSystem>();
+            go.AddComponent<StandaloneInputModule>();
+
 
         }    
 
@@ -61,5 +62,18 @@ public class UiManager : MonoBehaviour
             uiList[uiName].SetActive(false);
     }
 
+
+    public GameObject GetUI(string uiName)
+    {
+        if(uiList.ContainsKey(uiName))
+            return uiList[uiName];
+
+        return null;
+    }    
+
+    public void ClearList()
+    {
+        uiList.Clear();
+    }
     #endregion
 }

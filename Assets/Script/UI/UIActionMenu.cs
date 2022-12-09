@@ -10,12 +10,12 @@ public class UIActionMenu : MonoBehaviour
     public Button btnBattle;
     void Start()
     {
-        
+        btnBattle.onClick.AddListener(OnClickBattle);
     }
 
-    // Update is called once per frame
-    void Update()
+    
+    void OnClickBattle()
     {
-        
+        ScenesManager.GetInstance().ChangeScene(Scene.Battle);
     }
 }
